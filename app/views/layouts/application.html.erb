@@ -10,6 +10,15 @@
   </head>
 
   <body>
+    <% flash.each do |key, value| %>
+      <%= content_tag(:div, value, class: "#{key}") %>
+    <% end %>
     <%= yield %>
   </body>
+
+  <script>
+    $(function(){
+      $(".danger").fadeOut(5000);
+    });
+  </script>
 </html>
