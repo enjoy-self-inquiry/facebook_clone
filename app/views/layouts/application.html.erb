@@ -19,14 +19,13 @@
     <% else %>
       <%= link_to "Sign up", new_user_path %>
       <%= link_to "Login", new_session_path %>
-
     <% end %>
     <%= yield %>
   </body>
 
   <script>
     $(function(){
-      $(".danger").fadeOut(5000);
+      $(".danger, .notice").fadeOut(5000);
     });
   </script>
 </html>
