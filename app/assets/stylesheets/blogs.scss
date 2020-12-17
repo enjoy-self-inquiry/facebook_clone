@@ -1,3 +1,24 @@
-// Place all the styles related to the blogs controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.container {
+  width: 80%;
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+.content {
+  border: solid;
+  border-radius: 8px;
+}
+
+.pic-container {
+  text-align: center;
+}
+
+.pic {
+  width: 80%;
+  height: 80%;
+
+}
+
+h1 {
+  font-size: 26px;
+}

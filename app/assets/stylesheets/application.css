@@ -14,3 +14,9 @@
  *= require_tree .
  *= require_self
  */
+.navbar {
+  position: fixed;
+  width: 100%;
+  background-color: #87CEFA;
+  z-index: 100;
+}
