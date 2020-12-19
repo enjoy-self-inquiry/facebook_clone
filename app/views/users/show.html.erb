@@ -1,5 +1,8 @@
 <div class="container">
-  <h1><%= @user.name %>のページ</h1>
-  <p>メールアドレス: <%= @user.email %></p>
-  <%= link_to "ブログ一覧画面に移動する", blogs_path %>
+  <p><i class="fas fa-user fa-lg"></i>User:  <%= @user.name %></p>
+  <p><i class="fas fa-at fa-lg"></i>Email:  <%= @user.email %></p>
+  <br>
+  <%= link_to blogs_path, title:"go to top" do %>
+    <i class="fas fa-comments fa-2x"></i>
+  <% end %>
 </div>

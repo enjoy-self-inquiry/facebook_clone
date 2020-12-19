@@ -1,10 +1,17 @@
 <div class="container">
-  <h1>Log in</h1>
+  <h2>Log in</h2>
   <%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
+    <i class="fas fa-at fa-lg"></i>
     <%= f.label :email %>
     <%= f.email_field :email %>
+    <br>
+    <i class="fas fa-key fa-lg"></i>
     <%= f.label :password %>
     <%= f.password_field :password %>
-    <%= f.submit "Log in" %>
+    <br>
+    <br>
+    <%= button_tag type: "submit", class: "submit-btn", title: "Submit" do %>
+      <i class="fas fa-door-open fa-2x"></i>
+    <% end %>
   <% end %>
 </div>
