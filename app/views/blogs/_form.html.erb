@@ -10,18 +10,30 @@
     </div>
   <% end %>
   <div class="blog_title">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+    <i class="fas fa-leaf fa-lg"></i>
+      <%= form.label :title %>
+      <%= form.text_field :title %>
   </div>
   <div class="blog_title">
-    <%= form.label :content %>
-    <%= form.text_field :content %>
+    <i class="far fa-comment-dots fa-lg"></i>
+      <%= form.label :content %>
+      <%= form.text_field :content %>
   </div>
   <%= image_tag @blog.image.url %>
-  <div class="field">
-  <%= form.label :image %>
-  <%= form.file_field :image %>
-  </div>
-  <%= form.submit %>
+  <br>
+  <label>
+    <i class="fas fa-image fa-2x"></i>
+    <div class="field">
+      <%= form.label :image %>
+      <%= form.file_field :image %>
+    </div>
+  </label>
+  <br>
+  <%= button_tag type: "submit", class: "submit-btn", title: "Submit" do %>
+    <i class="fas fa-paper-plane"></i>
+  <% end %>
 <% end %>
-<%= link_to "投稿一覧画面にもどる", blogs_path %>
+<br>
+<%= link_to blogs_path, title: "back" do %>
+  <i class="fas fa-backspace fa-2x"></i>
+<% end %>

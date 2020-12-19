@@ -8,6 +8,7 @@
 .content {
   border: solid;
   border-radius: 8px;
+  margin-bottom: 10px;
 }
 
 .pic-container {
@@ -20,6 +21,29 @@
 
 }
 
-h1 {
+.margin {
+  margin-right: 20px;
+}
+
+.field {
+  display: none;
+}
+
+.submit-btn, .reject-btn {
+  border: transparent;
+  background-color: transparent;
+}
+
+#blog_image {
+  display: none;
+}
+
+h2 {
   font-size: 26px;
+  text-align: center;
+}
+
+label {
+  cursor: pointer;
+  cursor: hand;
 }

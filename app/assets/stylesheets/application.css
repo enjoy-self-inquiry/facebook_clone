@@ -14,6 +14,7 @@
  *= require_tree .
  *= require_self
  */
+ @import url('https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap');
 .navbar {
   position: fixed;
   height: 70px;
@@ -22,11 +23,15 @@
   z-index: 100;
 }
 
-.navbar-default .navbar-nav>li>a, .navbar-default .navbar-brand {
+.fas, .far {
+  color: #3b5998;
+}
+
+.white {
   color: white;
 }
 
-.navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-brand:hover {
+.white:hover {
   color: silver;
 }
 
@@ -35,9 +40,12 @@
 }
 
 .flash {
+  padding-top: 70px;
+  height: 5px;
   text-align: center;
 }
 
 body {
   background-color: #B9C4DB;
+  font-family: 'Kosugi Maru', sans-serif;
 }

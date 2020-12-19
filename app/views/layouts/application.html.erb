@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link href="https://use.fontawesome.com/releases/v5.11.1/css/all.css" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" rel="stylesheet">
   </head>
 
   <body>
@@ -20,43 +20,43 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#"><i class="fab fa-facebook fa-2x"></i>
+          <a class="navbar-brand" href="#"><i class="fab fa-facebook fa-2x white"></i>
           </a>
         </div>
         <div id="gnavi" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <% if logged_in? %>
             <li><%= link_to new_blog_path, title:"create new blog" do %>
-                  <i class="far fa-paper-plane fa-2x"></i>
+                  <i class="far fa-paper-plane fa-2x white"></i>
                 <% end %>
             </li>
             <li><%= link_to user_path(current_user.id), title: "Profile" do %>
-              <i class="fas fa-user-circle fa-2x"></i>
+              <i class="fas fa-user-circle fa-2x white"></i>
               <% end %>
             </li>
             <li><%= link_to session_path(current_user.id), title: "LogOut", method: :delete do %>
-              <i class="fas fa-sign-out-alt fa-2x"></i>
+              <i class="fas fa-sign-out-alt fa-2x white"></i>
               <% end %>
             </li>
             <% else %>
             <li><%= link_to new_user_path, title: "SignUp" do %>
-              <i class="fas fa-user-plus fa-2x"></i>
+              <i class="fas fa-user-plus fa-2x white"></i>
               <% end %>
             </li>
             <li><%= link_to new_session_path, title: "LogIn" do %>
-              <i class="fas fa-door-open fa-2x"></i>
+              <i class="fas fa-door-open fa-2x white"></i>
               <% end %>
             </li>
           </ul>
         </div>
         <% end %>
       </div>
-      <div class="flash">
-        <% flash.each do |key, value| %>
-          <%= content_tag(:div, value, class: "#{key}") %>
-        <% end %>
-      </div>
   </nav>
+  <div class="flash">
+    <% flash.each do |key, value| %>
+      <%= content_tag(:div, value, class: "#{key}") %>
+    <% end %>
+  </div>
     <%= yield %>
   </body>
 

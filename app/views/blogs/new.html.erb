@@ -1,5 +1,5 @@
 <div class="container">
-<h2>ブログを作成する</h2>
+<h2>投稿しよう</h2>
 <%= form_with(model: @blog, local: true ,url: choose_new_or_edit ) do |form| %>
   <% if @blog.errors.any? %>
     <div id="error_explanation">
@@ -12,19 +12,29 @@
     </div>
   <% end %>
   <div class="blog_title">
+    <i class="fas fa-leaf fa-lg"></i>
     <%= form.label :title %>
     <%= form.text_field :title %>
   </div>
   <div class="blog_title">
+    <i class="far fa-comment-dots fa-lg"></i>
     <%= form.label :content %>
     <%= form.text_field :content %>
   </div>
-
-  <div class="field">
-  <%= form.label :image %>
-  <%= form.file_field :image %>
-  </div>
-  <%= form.submit %>
+  <label>
+    <i class="fas fa-image fa-lg"></i>
+    <div class="field">
+      <%= form.label :image %>
+      <%= form.file_field :image %>
+    </div>
+  </label>
+  <br><br>
+  <%= button_tag type: "submit", class: "submit-btn", title: "Submit" do %>
+    <i class="fas fa-paper-plane fa-lg"></i>
+  <% end %>
+  |
+  <%= link_to blogs_path, title:"back to top" do %>
+    <i class="fas fa-undo fa-lg"></i>
+  <% end %>
 <% end %>
-<%= link_to "ブログ一覧画面にもどる", blogs_path %>
-</di>
+</div>

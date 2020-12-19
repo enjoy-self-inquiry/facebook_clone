@@ -1,18 +1,29 @@
 <div class="container">
-<h3>以下の内容で、送信する。</h3>
+<h2>以下の内容で、投稿する。</h2>
+<div>
 <%= form_with(model: @blog, url: blogs_path, local: true) do |form| %>
   <%= form.hidden_field :title %>
   <%= form.hidden_field :content %>
-  <p>タイトル:<%= @blog.title %></p>
-  <p>本文:<%= @blog.content %></p>
+  <p><i class="fas fa-leaf fa-lg"></i>Title:  <%= @blog.title %></p>
+  <p><i class="far fa-comment-dots fa-lg"></i>Content:  <%= @blog.content %></p>
 
-
-  <%= form.label :image %>
+  <%= form.label :image do %>
+    <i class="fas fa-image fa-2x"></i>
+  <% end %>
   <%= image_tag(@blog.image.url) if @blog.image && @blog.image.url %>
   <%= form.file_field :image %>
   <%= form.hidden_field :image_cache %>
-
-  <%= form.submit  "投稿する" %>
-  <%= form.submit "戻る", name: 'back' %>
+</div>
+<br>
+  <%= button_tag type: "submit", class: "submit-btn", title: "Submit" do %>
+    <i class="fas fa-paper-plane fa-lg"></i>
+  <% end %>
+  |
+  <label>
+    <i class="fas fa-undo fa-lg"></i>
+    <div class="field">
+      <%= form.submit "戻る", name: 'back' %>
+    </div>
+  </label>
 <% end %>
 </div>

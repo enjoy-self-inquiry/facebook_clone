@@ -1,5 +1,5 @@
 <div class="container">
-  <h1 class="title">投稿一覧</h1>
+  <h2 class="title">投稿一覧</h2>
       <div class="row">
         <% @blogs.each do |blog| %>
           <div class="col-md-12 content">
@@ -8,22 +8,22 @@
               <%= image_tag blog.image.url, class:"pic" %>
             </div>
             <br>
-              <i class="fas fa-user-alt"></i><%= blog.user.name %>
-            <br>
-              <i class="fas fa-leaf"></i><%= blog.title %>
-            <br>
-              <i class="far fa-comment-dots"></i><%= blog.content %>
+              <i class="fas fa-clock fa-lg"></i><%= blog.updated_at.strftime("%Y-%m-%d %H:%M") %>
+            <br><br>
+              <i class="fas fa-user-alt fa-lg"></i><%= blog.user.name %>
+            <br><br>
+              <i class="fas fa-leaf fa-lg"></i><%= blog.title %>
+            <br><br>
+              <i class="far fa-comment-dots fa-lg"></i><%= blog.content %>
             <br>
               <%= link_to blog_path(blog.id), title:"more detail" do %>
-                <i class="fas fa-info-circle"></i>
+                <i class="fas fa-info-circle margin fa-lg"></i>
               <% end %>
-            <br>
               <%= link_to edit_blog_path(blog.id), data: { confirm: '本当に編集していいですか？' }, title:"edit" do %>
-                <i class="far fa-edit"></i>
+                <i class="far fa-edit margin fa-lg"></i>
               <% end %>
-            <br>
               <%= link_to blog_path(blog.id), method: :delete, data: { confirm: '本当に削除していいですか？' }, title:"delete" do %>
-                <i class="far fa-trash-alt"></i>
+                <i class="far fa-trash-alt margin fa-lg"></i>
               <% end %>
             <br>
           </div>

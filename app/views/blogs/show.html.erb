@@ -1,16 +1,16 @@
 <div class="container">
-<h1>ブログ詳細画面</h1>
-<p>タイトル: <%= @blog.title %></p>
-<p>内容: <%= @blog.content %></p>
+<h2>投稿詳細</h2>
+<p><i class="fas fa-leaf fa-lg"></i>Title: <%= @blog.title %></p>
+<p><i class="far fa-comment-dots fa-lg"></i>Content: <%= @blog.content %></p>
 
 <p id="notice"><%= notice %></p>
-<p>
-  <strong>Image:</strong>
-  <%= image_tag @blog.image.url %>
-</p>
-<%= link_to 'Edit', edit_blog_path(@blog) %> |
-<%= link_to 'Back', blogs_path %>
-
+<p><i class="fas fa-image fa-lg"></i>Image: <%= image_tag @blog.image.url %></p>
+<%= link_to edit_blog_path(@blog), title:"edit" do %>
+  <i class="far fa-edit fa-lg"></i>
+<% end %>|
+<%= link_to blogs_path, title:"back to top" do %>
+  <i class="fas fa-undo fa-lg"></i>
+<% end %>
 <% unless @blog.user_id == current_user.id %>
   <% if @favorite.present? %>
     <%= link_to 'お気に入り解除する', favorite_path(id: @favorite.id), method: :delete, class: 'btn btn-danger' %>
