@@ -22,7 +22,7 @@
   <%= image_tag @blog.image.url %>
   <br>
   <label>
-    <i class="fas fa-image fa-2x"></i>
+    <i class="fas fa-image fa-lg"></i>
     <div class="field">
       <%= form.label :image %>
       <%= form.file_field :image %>
@@ -30,10 +30,10 @@
   </label>
   <br>
   <%= button_tag type: "submit", class: "submit-btn", title: "Submit" do %>
-    <i class="fas fa-paper-plane"></i>
+    <i class="fas fa-paper-plane fa-lg"></i>
   <% end %>
-<% end %>
-<br>
-<%= link_to blogs_path, title: "back" do %>
-  <i class="fas fa-backspace fa-2x"></i>
+  |
+  <%= link_to blogs_path, title: "back" do %>
+    <i class="fas fa-backspace fa-lg"></i>
+  <% end %>
 <% end %>

@@ -30,20 +30,20 @@
                   <i class="far fa-paper-plane fa-2x white"></i>
                 <% end %>
             </li>
-            <li><%= link_to user_path(current_user.id), title: "Profile" do %>
+            <li><%= link_to user_path(current_user.id), title: "profile" do %>
               <i class="fas fa-user-circle fa-2x white"></i>
               <% end %>
             </li>
-            <li><%= link_to session_path(current_user.id), title: "LogOut", method: :delete do %>
+            <li><%= link_to session_path(current_user.id), title: "logout", method: :delete do %>
               <i class="fas fa-sign-out-alt fa-2x white"></i>
               <% end %>
             </li>
             <% else %>
-            <li><%= link_to new_user_path, title: "SignUp" do %>
+            <li><%= link_to new_user_path, title: "signup" do %>
               <i class="fas fa-user-plus fa-2x white"></i>
               <% end %>
             </li>
-            <li><%= link_to new_session_path, title: "LogIn" do %>
+            <li><%= link_to new_session_path, title: "login" do %>
               <i class="fas fa-door-open fa-2x white"></i>
               <% end %>
             </li>
