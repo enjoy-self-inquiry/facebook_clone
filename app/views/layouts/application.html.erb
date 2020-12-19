@@ -20,27 +20,31 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#"><i class="fab fa-facebook"></i>
+          <a class="navbar-brand" href="#"><i class="fab fa-facebook fa-2x"></i>
           </a>
         </div>
         <div id="gnavi" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <% if logged_in? %>
-            <li><%= link_to user_path(current_user.id) do %>
-              <i class="fas fa-user-circle"></i>
+            <li><%= link_to new_blog_path, title:"create new blog" do %>
+                  <i class="far fa-paper-plane fa-2x"></i>
+                <% end %>
+            </li>
+            <li><%= link_to user_path(current_user.id), title: "Profile" do %>
+              <i class="fas fa-user-circle fa-2x"></i>
               <% end %>
             </li>
-            <li><%= link_to session_path(current_user.id), method: :delete do %>
-              <i class="fas fa-sign-out-alt"></i>
+            <li><%= link_to session_path(current_user.id), title: "LogOut", method: :delete do %>
+              <i class="fas fa-sign-out-alt fa-2x"></i>
               <% end %>
             </li>
             <% else %>
-            <li><%= link_to new_user_path do %>
-              <i class="fas fa-user-plus"></i>
+            <li><%= link_to new_user_path, title: "SignUp" do %>
+              <i class="fas fa-user-plus fa-2x"></i>
               <% end %>
             </li>
-            <li><%= link_to new_session_path do %>
-              <i class="fas fa-door-open"></i>
+            <li><%= link_to new_session_path, title: "LogIn" do %>
+              <i class="fas fa-door-open fa-2x"></i>
               <% end %>
             </li>
           </ul>

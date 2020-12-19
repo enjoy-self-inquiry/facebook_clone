@@ -1,6 +1,5 @@
 <div class="container">
   <h1 class="title">投稿一覧</h1>
-    <%= link_to '新しく投稿する', new_blog_path %>
       <div class="row">
         <% @blogs.each do |blog| %>
           <div class="col-md-12 content">
@@ -15,11 +14,17 @@
             <br>
               <i class="far fa-comment-dots"></i><%= blog.content %>
             <br>
-              <%= link_to '詳細を確認する', blog_path(blog.id) %>
+              <%= link_to blog_path(blog.id), title:"more detail" do %>
+                <i class="fas fa-info-circle"></i>
+              <% end %>
             <br>
-              <%= link_to "この投稿を編集する", edit_blog_path(blog.id), data: { confirm: '本当に編集していいですか？' } %>
+              <%= link_to edit_blog_path(blog.id), data: { confirm: '本当に編集していいですか？' }, title:"edit" do %>
+                <i class="far fa-edit"></i>
+              <% end %>
             <br>
-              <%= link_to 'この投稿を削除する', blog_path(blog.id), method: :delete, data: { confirm: '本当に削除していいですか？' } %>
+              <%= link_to blog_path(blog.id), method: :delete, data: { confirm: '本当に削除していいですか？' }, title:"delete" do %>
+                <i class="far fa-trash-alt"></i>
+              <% end %>
             <br>
           </div>
         <% end %>

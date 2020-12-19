@@ -29,10 +29,15 @@
 .navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-brand:hover {
   color: silver;
 }
+
 .navbar-nav {
   float: right;
 }
 
 .flash {
   text-align: center;
+}
+
+body {
+  background-color: #B9C4DB;
 }
