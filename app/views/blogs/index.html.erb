@@ -5,7 +5,9 @@
           <div class="col-md-12 content">
             <br>
             <div class="pic-container">
+              <% if blog.image.url %>
               <%= image_tag blog.image.url, class:"pic" %>
+              <% end %>
             </div>
             <br>
               <i class="fas fa-clock fa-lg"></i><%= blog.updated_at.strftime("%Y-%m-%d %H:%M") %>
@@ -15,7 +17,7 @@
               <i class="fas fa-leaf fa-lg"></i><%= blog.title %>
             <br><br>
               <i class="far fa-comment-dots fa-lg"></i><%= blog.content %>
-            <br>
+            <br><br>
               <%= link_to blog_path(blog.id), title:"more detail" do %>
                 <i class="fas fa-info-circle margin fa-lg"></i>
               <% end %>
