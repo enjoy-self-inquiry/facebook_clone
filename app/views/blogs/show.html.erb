@@ -5,13 +5,17 @@
 
 <p id="notice"><%= notice %></p>
 <p><i class="fas fa-image fa-lg"></i>Image: <%= image_tag @blog.image.url %></p>
-<%= link_to edit_blog_path(@blog), title:"edit" do %>
-  <i class="far fa-edit fa-lg"></i>
-<% end %>|
+<br><br>
+<% if @blog.user.id == current_user.id %>
+  <%= link_to edit_blog_path(@blog), title:"edit" do %>
+    <i class="far fa-edit fa-lg"></i>
+  <% end %>|
+<% end %>
 <%= link_to blogs_path, title:"back to top" do %>
   <i class="fas fa-undo fa-lg"></i>
 <% end %>
 <% unless @blog.user_id == current_user.id %>
+|
   <% if @favorite.present? %>
     <%= link_to 'お気に入り解除する', favorite_path(id: @favorite.id), method: :delete, class: 'btn btn-danger' %>
   <% else %>
@@ -19,3 +23,4 @@
   <% end %>
 <% end %>
 </div>
+
