@@ -25,6 +25,11 @@ class BlogsController < ApplicationController
   end
 
   def edit
+    if @blog.user == current_user
+      render :edit
+    else
+      redirect_to blogs_path
+    end
   end
 
   def update
@@ -36,8 +41,12 @@ class BlogsController < ApplicationController
   end
 
   def destroy
-    @blog.destroy
-    redirect_to blogs_path, notice:"deleted!"
+    if @blog.user == current_user
+      @blog.destroy
+      redirect_to blogs_path, notice:"deleted!"
+    else
+      redirect_to blogs_path
+    end
   end
 
   def confirm
